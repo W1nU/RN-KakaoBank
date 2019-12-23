@@ -5,6 +5,8 @@ import { PersistGate } from "redux-persist/integration/react"
 
 import configureStore from "./src/Redux/Store"
 
+import Home from "./src/Component/Home/Home"
+
 const { store, persistor } = configureStore()
 
 let App = () => {
@@ -14,7 +16,7 @@ let App = () => {
       <PersistGate loading={null} persistor={persistor}>
         <Router>
           <Stack key="root">
-          
+            <Scene key="Home" component={Home} hideNavBar/>
           </Stack>
         </Router>
       </PersistGate>
