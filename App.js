@@ -1,5 +1,5 @@
-import React from "react-native"
-import { Router, Stack, Scene } from "react-native-router-flux"
+import React from "react"
+import { Scene, Router, Stack, Actions, Lightbox, Modal } from "react-native-router-flux";
 import { Provider } from "react-redux"
 import { PersistGate } from "redux-persist/integration/react"
 
@@ -9,15 +9,17 @@ import Home from "./src/Component/Home/Home"
 
 const { store, persistor } = configureStore()
 
-let App = () => {
+const App = () => {
 
   return(
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <Router>
-          <Stack key="root">
-            <Scene key="Home" component={Home} hideNavBar/>
-          </Stack>
+          <Lightbox>
+            <Stack key="root">
+              <Scene key="Home" component={Home} hideNavBar/>
+            </Stack>
+          </Lightbox>
         </Router>
       </PersistGate>
     </Provider>
