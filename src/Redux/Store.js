@@ -1,6 +1,6 @@
 import { combineReducers, createStore } from "redux"
 import { persistStore, persistReducer } from "redux-persist"
-import storage from "redux-persist/lib/storage"
+import AsyncStorage from "@react-native-community/async-storage"
 
 import reducers from "./Reducers"
 
@@ -10,7 +10,7 @@ const rootReducer = combineReducers({
 
 const persistConfig = {
     key: "root",
-    storage
+    storage: AsyncStorage
 }
 
 const enhancedReducer = persistReducer(persistConfig, rootReducer)
