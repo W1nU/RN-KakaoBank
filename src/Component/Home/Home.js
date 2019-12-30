@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import {
     View,
     SafeAreaView,
@@ -7,6 +7,7 @@ import {
     Dimensions,
     ScrollView
 } from "react-native"
+import { useSelector } from "react-redux"
 
 import Tabbar from "./Tabbar"
 import Hello from "./Hello"
@@ -15,6 +16,12 @@ import AccountList from "./AccountList"
 const WINDOW = Dimensions.get("window")
 
 const Home = (props) => {
+    const Accounts = useSelector(state => state.accounts)
+
+    useEffect(() => {
+        console.log(Accounts)
+    }, [Accounts])
+    
     return(
         <SafeAreaView style={styles.page}>
             <View style={styles.tabbar}>

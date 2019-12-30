@@ -5,6 +5,8 @@ import {
 import NaverAPI from "../Api/NaverAPI"
 
 const accounts = (state = [], action) => {
+    console.log(action)
+
     switch (action.type) {
       case ADD_ACCOUNT:
         return [
@@ -17,6 +19,7 @@ const accounts = (state = [], action) => {
             }
         ]
       default:
+        console.log(action)
         return state;
     }
 };

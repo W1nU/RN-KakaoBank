@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { RFPercentage } from 'react-native-responsive-fontsize';
+import { Actions } from "react-native-router-flux"
 import { fontSettings } from '../../Common/Settings';
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
 import AntDesign from "react-native-vector-icons/AntDesign"
@@ -29,7 +30,7 @@ const AccountListItem = props => {
       );
     } else {
       return (
-        <TouchableOpacity style={styles.addCard}>
+        <TouchableOpacity style={styles.addCard} onPress={Actions.AddAccount}>
           <AntDesign name="plussquareo" size={60} color="rgba(0,0,0,0.43)"/> 
         </TouchableOpacity>
       );

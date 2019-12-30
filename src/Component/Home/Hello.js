@@ -11,19 +11,8 @@ import { useSelector, useDispatch } from "react-redux"
 import AntDesign from "react-native-vector-icons/AntDesign"
 import { RFPercentage } from "react-native-responsive-fontsize"
 import { fontSettings } from "../../Common/Settings"
-import * as NaverAPI from "../../Api/NaverAPI"
 
 const Hello = (props) => {
-    const naver = useSelector(state => state.NaverAPI)
-    const dispatch = useDispatch()
-
-    useEffect(() => {
-        dispatch(NaverAPI.apiCall())
-    }, [])
-
-    useEffect(() => {
-        if(naver.error) Alert.alert("Error")
-    }, [naver])
 
     return(
         <View style={styles.component}>

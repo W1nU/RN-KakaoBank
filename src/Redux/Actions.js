@@ -1,4 +1,4 @@
-const ADD_ACCOUNT = "ADD_ACCOUNT";
+export const ADD_ACCOUNT = "ADD_ACCOUNT";
 
 export const addAccount = (accountTitle, accountNumber, accountAmmount, accountColor) => {
     return {
