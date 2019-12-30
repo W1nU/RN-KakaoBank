@@ -2,6 +2,8 @@ import {
     ADD_ACCOUNT
 } from "./Actions"
 
+import NaverAPI from "../Api/NaverAPI"
+
 const accounts = (state = [], action) => {
     switch (action.type) {
       case ADD_ACCOUNT:
@@ -20,7 +22,8 @@ const accounts = (state = [], action) => {
 };
 
 const reducers = {
-    accounts
+    accounts,
+    NaverAPI
 }
 
 export default reducers
